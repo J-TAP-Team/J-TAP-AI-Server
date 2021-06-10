@@ -1,10 +1,15 @@
-from flask import Flask
+import ai.transfer
+from flask import Flask, request
+
 app = Flask(__name__)
 
 
-@app.route('/')
-def home():
-    return 'Hello, World'
+@app.route('/',methods=['POST'])
+def transfer():
+    content = request.files["content"]
+    style = request.files["style"]
+
+    return content.filename
 
 
 if __name__ == '__main__':
