@@ -1,4 +1,4 @@
-import ai.transfer
+from ai.transfer import wct_main
 from flask import Flask, request
 
 app = Flask(__name__)
@@ -8,7 +8,8 @@ app = Flask(__name__)
 def transfer():
     content = request.files["content"]
     style = request.files["style"]
-
+    wct_main(content,style)
+    
     return content.filename
 
 
