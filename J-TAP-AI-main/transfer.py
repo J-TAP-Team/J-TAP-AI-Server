@@ -13,12 +13,12 @@ from torch.autograd import Variable
 import torchvision.transforms.functional as tf
 
 
-def wct_main():
+def wct_main(content,style):
     parser = argparse.ArgumentParser(description='Universal Style Transfer via Feature Transforms',
                                     formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
-    parser.add_argument('--content_image', default='./datasets/content/fatman.png', type=str, dest='content_image')
-    parser.add_argument('--style_image', default='./datasets/style/wct2.jpg', type=str, dest='style_image')
+    parser.add_argument('--content_image', default=content, type=str, dest='content_image')
+    parser.add_argument('--style_image', default=style, type=str, dest='style_image')
     #parser.add_argument('--weight_path', default='./weights/vgg_conv.pth', type=str, dest='weight_path')
     parser.add_argument('--alpha', type=float,default=0.6, help='hyperparameter to blend wct feature and content feature')
     parser.add_argument('--img_size', default=512, type=int, dest='img_size')
