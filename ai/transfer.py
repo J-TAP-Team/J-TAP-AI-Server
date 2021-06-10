@@ -3,7 +3,7 @@ import argparse
 import time
 from PIL import Image
 
-from wct import *
+from ai.wct import *
 
 import torch
 import torch.nn as nn
