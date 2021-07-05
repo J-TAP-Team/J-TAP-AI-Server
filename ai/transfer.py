@@ -13,6 +13,7 @@ from torch.autograd import Variable
 import torchvision.transforms.functional as tf
 
 
+
 def wct_main(content,style):
     parser = argparse.ArgumentParser(description='Universal Style Transfer via Feature Transforms',
                                     formatter_class=argparse.ArgumentDefaultsHelpFormatter)
@@ -27,16 +28,16 @@ def wct_main(content,style):
 
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-    encoder1 = './wct_weights/vgg_normalised_conv1_1.pth'
-    encoder2 = './wct_weights/vgg_normalised_conv2_1.pth'
-    encoder3 = './wct_weights/vgg_normalised_conv3_1.pth'
-    encoder4 = './wct_weights/vgg_normalised_conv4_1.pth'
-    encoder5 = './wct_weights/vgg_normalised_conv5_1.pth'   
-    decoder1 = './wct_weights/feature_invertor_conv1_1.pth'
-    decoder2 = './wct_weights/feature_invertor_conv2_1.pth'
-    decoder3 = './wct_weights/feature_invertor_conv3_1.pth'
-    decoder4 = './wct_weights/feature_invertor_conv4_1.pth'
-    decoder5 = './wct_weights/feature_invertor_conv5_1.pth'
+    encoder1 = 'ai/wct_weights/vgg_normalised_conv1_1.pth'
+    encoder2 = 'ai/wct_weights/vgg_normalised_conv2_1.pth'
+    encoder3 = 'ai/wct_weights/vgg_normalised_conv3_1.pth'
+    encoder4 = 'ai/wct_weights/vgg_normalised_conv4_1.pth'
+    encoder5 = 'ai/wct_weights/vgg_normalised_conv5_1.pth'   
+    decoder1 = 'ai/wct_weights/feature_invertor_conv1_1.pth'
+    decoder2 = 'ai/wct_weights/feature_invertor_conv2_1.pth'
+    decoder3 = 'ai/wct_weights/feature_invertor_conv3_1.pth'
+    decoder4 = 'ai/wct_weights/feature_invertor_conv4_1.pth'
+    decoder5 = 'ai/wct_weights/feature_invertor_conv5_1.pth'
 
     paths = encoder1, encoder2, encoder3, encoder4, encoder5, decoder1, decoder2, decoder3, decoder4, decoder5
     wct = WCT(paths)
@@ -79,7 +80,3 @@ def wct_main(content,style):
     end_time = time.time()
     print('Start to End Time: %f' % (end_time - start_time))  
 
-
-if __name__ == '__main__':
-    #main()
-    wct_main()
