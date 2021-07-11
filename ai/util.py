@@ -13,6 +13,7 @@ def s3upload(file, filename):
         region = s3_config["region"]
 
         bucket_name = s3_config["bucket_name"]
+
         s3.upload_fileobj(
             file, bucket_name, filename, ExtraArgs={"ACL": "public-read"}
         )
