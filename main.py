@@ -23,8 +23,7 @@ def transfer():
         return response_object,200
         
     except Exception as e:
-
-        response_object = {"status": "fail", "message": e}
+        response_object = {"message": str(e)}
         return response_object,400
 
 if __name__ == '__main__':
